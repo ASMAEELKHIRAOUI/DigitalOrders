@@ -1,5 +1,5 @@
 package com.example.digitalorders.entities.enums;
 
-public enum RoleName {
+public enum Role {
     Admin, Client
 }
