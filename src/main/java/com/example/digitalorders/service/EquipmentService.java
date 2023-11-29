@@ -3,17 +3,18 @@ package com.example.digitalorders.service;
 import com.example.digitalorders.entities.Category;
 import com.example.digitalorders.entities.Equipment;
 import com.example.digitalorders.entities.Manufacturer;
+import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.util.List;
 
 public interface EquipmentService {
 
-    Equipment saveEquipment(Equipment equipment, Long category_id, Long manufacturer_id);
+    Equipment save(Equipment equipment);
 
-    Equipment updateEquipment(Equipment equipment, Category category, Manufacturer manufacturer);
+    Equipment update(Long id, Equipment equipment);
 
-    List<Equipment> searchAvailableEquipment(LocalDateTime date);
+    List<Equipment> searchAvailableEquipments(LocalDateTime date);
 
     boolean checkIfEquipmentExist(String name);
 
