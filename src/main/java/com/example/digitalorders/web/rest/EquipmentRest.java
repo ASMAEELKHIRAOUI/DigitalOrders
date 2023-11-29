@@ -2,6 +2,7 @@ package com.example.digitalorders.web.rest;
 
 import com.example.digitalorders.entities.Equipment;
 import com.example.digitalorders.service.EquipmentService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -9,14 +10,11 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 
 @RestController
+@RequiredArgsConstructor
 @RequestMapping("/api/v1/equipment")
 public class EquipmentRest {
 
     private final EquipmentService equipmentService;
-
-    public EquipmentRest(EquipmentService equipmentService) {
-        this.equipmentService = equipmentService;
-    }
 
     @PostMapping
     public ResponseEntity<Equipment> save(@Valid @RequestBody Equipment equipment){

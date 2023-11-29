@@ -2,15 +2,16 @@ package com.example.digitalorders.entities;
 
 
 import com.example.digitalorders.entities.enums.Status;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.*;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Set;
 
-@Data
+@Setter
+@Getter
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
@@ -30,11 +31,9 @@ public class Demand {
 
     private String address;
 
-    @OneToOne
-    private Contract contract;
-
-    @ManyToMany(mappedBy ="demands")
-    private Set<EquipmentVIN> equipmentVINs;
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JsonIgnore
+    private List<EquipmentVIN> equipmentVINs;
 
     private Status status;
 }

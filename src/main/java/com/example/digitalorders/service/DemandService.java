@@ -8,9 +8,9 @@ import java.time.LocalDateTime;
 
 public interface DemandService {
 
-    Demand saveDemand(Demand demand);
+    Demand save(Demand demand);
 
-    Demand updateDemand(Demand demand);
+    Demand update(Long id, Demand demand);
 
     boolean checkIfEquipmentIsAvailable(EquipmentVIN equipmentVIN, LocalDateTime startingDate, LocalDateTime endingDate);
 

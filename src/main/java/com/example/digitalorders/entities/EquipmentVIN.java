@@ -19,11 +19,6 @@ public class EquipmentVIN {
 
     private String vin;
 
-    @ManyToMany
-    @JoinTable(
-            name = "demand_equipmentvins",
-            joinColumns = @JoinColumn(name = "Equipmentvin_id"),
-            inverseJoinColumns = @JoinColumn(name = "demand_id")
-    )
+    @ManyToMany(mappedBy = "equipmentVINs")
     private Set<Demand> demands;
 }
