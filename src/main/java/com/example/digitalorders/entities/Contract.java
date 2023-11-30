@@ -17,7 +17,7 @@ public class Contract {
     @Id  @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @OneToOne
+    @ManyToOne
     private Demand demand;
 
     private Status status;

@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -38,6 +39,11 @@ public class DemandServiceImpl implements DemandService {
             return demandRepository.save(existingDemand);
         }
         return null;
+    }
+
+    @Override
+    public Optional<Demand> findDemandById(Long id){
+        return demandRepository.findById(id);
     }
 
     @Override

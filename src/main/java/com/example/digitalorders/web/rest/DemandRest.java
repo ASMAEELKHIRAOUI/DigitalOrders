@@ -27,5 +27,4 @@ public class DemandRest {
         return new ResponseEntity<>(demandService.update(id, demand), HttpStatus.ACCEPTED);
     }
 
-
 }

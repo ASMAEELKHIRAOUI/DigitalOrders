@@ -8,8 +8,8 @@ import java.util.List;
 
 public interface ContractService {
 
-    Contract createContract(Demand demand, List<EquipmentVIN> equipmentVIN);
+    Contract save(Contract contract);
 
-    Contract updateContract(Contract contract);
+    Contract update(Long id, Contract contract);
 
 }
